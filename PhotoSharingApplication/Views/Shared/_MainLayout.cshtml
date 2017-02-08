@@ -4,47 +4,97 @@
 <head>
     <title>@ViewBag.Title</title>
     <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="~/Content/PhotoSharingStyles.css" />
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.0/jquery-ui.min.js" type="text/javascript"></script>
 </head>
 <body>
 
-    <h1 class="site-page-title">Adventure Works Photo Sharing</h1>
-    <div class="login-controls">
-        @if (Request.IsAuthenticated) {
-            <div>
-                Hello, @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(User.Identity.Name).
-                @Html.ActionLink("Log Off", "LogOff", "Account")
-                @Html.ActionLink("Reset", "ResetPassword", "Account")
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("index", "Home")">DanskeMem.es</a>
             </div>
-        } else {
-            <div>
-                @Html.ActionLink("Log In", "Login", "Account")
-                @Html.ActionLink("Register", "Register", "Account")
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="@Url.Action("index", "photo")">Photos</a></li>
+                    <li><a href="@Url.Action("slideshow", "photo")">SlideShow</a></li>
+
+                    <li><a href="@Url.Action("map", "photo")">Map</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            @if (Request.IsAuthenticated)
+                            {
+                                <span>
+                                    @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(User.Identity.Name)
+                                </span>}
+                            else
+                            {
+                                <span>
+                                    Login
+                                </span>}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="#">
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        <span>
+                                            @Html.ActionLink("Log Off", "LogOff", "Account")
+                                            @Html.ActionLink("Reset password", "ResetPassword", "Account")
+                                        </span>}
+                                    else
+                                    {
+                                        <span>
+                                            @Html.ActionLink("Log In", "Login", "Account")
+                                            @Html.ActionLink("Register", "Register", "Account")
+                                        </span>}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div><!--/.nav-collapse -->
+
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="site-page-title"></h1>
+        <div class="clear-floats" />
+
+        <div id="topmenu">
+            @Html.MvcSiteMap().Menu(false, true, true)
+        </div>
+
+        <div id="breadcrumb">
+            Current Location: @Html.MvcSiteMap().SiteMapPath()
+        </div>
+
+        @if (Session["Favorites"] != null)
+        {
+            <div id="favourites-link">
+                @Html.ActionLink("Favorite Photos", "FavoritesSlideshow", "Photo")
             </div>
         }
-    </div>
-    <div class="clear-floats" />
 
-    <div id="topmenu">
-        @Html.MvcSiteMap().Menu(false, true, true)
-    </div>
-    
-    <div id="breadcrumb">
-        Current Location: @Html.MvcSiteMap().SiteMapPath()
-    </div>
-
-    @if (Session["Favorites"] != null) {
-        <div id="favourites-link">
-            @Html.ActionLink("Favorite Photos", "FavoritesSlideshow", "Photo")
+        <div>
+            @RenderBody()
         </div>
-    }
-    
-    <div>
-        @RenderBody()
-    </div>
-
+    </div>@*container*@
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.0/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
