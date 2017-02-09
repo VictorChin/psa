@@ -1,7 +1,10 @@
 ﻿@{
     ViewBag.Title = "All Photos";
 }
+<div class="text-center">
+    <a href="@Url.Action("create","photo")"<div class="btn btn-success btn-lg text-center">Add a photo!</div></a>
 
-<h2>All Photos</h2>
+    <hr />
 
-@Html.Action("_PhotoGallery", "Photo")
+    @Html.Action("_PhotoGallery", "Photo")
+</div>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -23,14 +24,6 @@ namespace PhotoSharingApplication
                 defaults: new { controller = "Photo", action = "Display" },
                 constraints: new { id = "[0-9]+" }
             );
-            routes.MapRoute(
-                name: "OwnerPhoto",
-                url: "{owner}/{filename}",
-                defaults: new {controller="Photo",action="DisplayByOwnerPhoto"},
-                 constraints: new { filename = @"^[a-zA-Z0-9]+\.[a-z]{3}$" }
-                );
-            //This route means we can access photos like this: /photo/title/my%20photo%20title
-            routes.MapRoute(
                 name: "PhotoTitleRoute",
                 url: "photo/title/{title}",
                 defaults: new { controller = "Photo", action = "DisplayByTitle" }
