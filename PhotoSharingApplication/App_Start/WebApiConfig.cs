@@ -24,14 +24,26 @@ namespace PhotoSharingApplication
             );
 
             config.Routes.MapHttpRoute(
+                name: "FirstApi",
+                routeTemplate: "api/first",
+                defaults: new { controller = "First", action = "DoAdd", id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                 name: "DeletePhotoApi",
+                 routeTemplate: "api/first/{id}",
+                 defaults: new { controller = "First", action = "DeletePhoto", id = RouteParameter.Optional }
+);
+
+            config.Routes.MapHttpRoute(
                 name: "PhotosApi",
                 routeTemplate: "api/photos",
                 defaults: new { controller = "PhotoApi", action = "GetAllPhotos", id = RouteParameter.Optional }
             );
 
             //Configure formatters.
-            var json = config.Formatters.JsonFormatter; 
-            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects; 
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
             config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
