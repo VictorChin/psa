@@ -22,9 +22,9 @@ namespace PhotoSharingApplication
 
             AreaRegistration.RegisterAllAreas();
 
-            RouteTable.Routes.MapHubs();
+           
 
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            GlobalConfiguration.Configure(WebApiConfig.Register);
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
