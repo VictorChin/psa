@@ -211,7 +211,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\justified-nav.css" />
     <Content Include="Content\PhotoSharingStyles.css" />
     <Content Include="Error.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -227,10 +226,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="Properties\PublishProfiles\Staging Slot.pubxml" />
+    <None Include="Properties\PublishProfiles\alistairsphotosharing - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\alistairsphotosharing - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\victorpsa - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\victorpsa-staging - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\webSiteogtnmghy2vark - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
