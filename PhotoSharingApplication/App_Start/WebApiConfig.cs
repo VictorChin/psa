@@ -22,6 +22,17 @@ namespace PhotoSharingApplication
                 routeTemplate: "api/photos/{title}",
                 defaults: new { controller = "PhotoApi", action = "GetPhotoByTitle" }
             );
+            config.Routes.MapHttpRoute(
+               name: "FirstApi",
+               routeTemplate: "api/first",
+               defaults: new { controller = "First", action = "GetAllPhotos", id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "FirstApiDelete",
+                routeTemplate: "api/first/{id}",
+                defaults: new { controller = "First", action = "DeletePhoto", id = RouteParameter.Optional }
+            );
 
             config.Routes.MapHttpRoute(
                 name: "PhotosApi",
