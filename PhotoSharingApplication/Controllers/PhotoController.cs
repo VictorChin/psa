@@ -52,7 +52,7 @@ namespace PhotoSharingApplication.Controllers
             else
             {
                 photos = (from p in context.Photos
-                          orderby p.CreatedDate descending
+                          orderby p.PhotoID descending
                           select p).Take(number).ToList();
             }
 
