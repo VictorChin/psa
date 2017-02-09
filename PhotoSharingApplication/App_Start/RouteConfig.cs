@@ -24,6 +24,7 @@ namespace PhotoSharingApplication
                 defaults: new { controller = "Photo", action = "Display" },
                 constraints: new { id = "[0-9]+" }
             );
+            routes.MapRoute(
                 name: "PhotoTitleRoute",
                 url: "photo/title/{title}",
                 defaults: new { controller = "Photo", action = "DisplayByTitle" }
