@@ -1,40 +1,50 @@
 ﻿@model IEnumerable<PhotoSharingApplication.Models.Photo>
 
-@foreach (var item in Model)
+
+@for (int i = 0; i < Model.Count(); i++)
 {
-    <div class="text-center">
-        <div class="photo-index-card">
-            <h3>"@item.Title"</h3>
+        var item = Model.ElementAt(i);
+
+      
 
 
-            <img class="photo-index-card-img" src="@item.AzurePath" />
+        <div class="col-md-4">
+            <h3 class="text-primary">"@item.Title"</h3>
 
 
-            <div class="photo-metadata">
+            <a class="thumbnail" href="@Url.Action("Display", "Photo", new { id = item.PhotoID })"><img class="thumbnail img-thumbnail" src="@item.AzurePath" /></a>
+
+
+            <div class="caption">
 
                 <div>
-                    <span class="display-label">
+                    <span>
                         Created By:
                     </span>
-                    <span class="display-field">
+                    <span>
                         @Html.DisplayFor(model => item.UserName)
                     </span>
                 </div>
 
                 <div>
-                    <span class="display-label">
+                    <span>
                         Created On:
                     </span>
-                    <span class="display-field">
+                    <span>
                         @Html.DisplayFor(model => item.CreatedDate)
                     </span>
                 </div>
 
             </div>
 
-            @Html.ActionLink("Display", "Display", new { id = item.PhotoID })
-            @Html.ActionLink("Delete", "Delete", new { id = item.PhotoID })
+            <div class="btn-group-sm">
+                <div class="btn btn-sm btn-info">@Html.ActionLink("Display", "Display", new { id = item.PhotoID })</div>
+                <div class="btn btn-sm btn-warning">@Html.ActionLink("Delete", "Delete", new { id = item.PhotoID })</div>
+            </div>
 
         </div>
-    </div>
-    }
+       
+    
+}
+
+

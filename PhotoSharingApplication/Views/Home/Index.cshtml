@@ -1,10 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Welcome to Adventure Works Photo Sharing";
+    ViewBag.Title = "Welcome to DanskeMemes - Just Memes";
 }
 
-<p>This is Awesome!</p>
-            
-<h2>Latest Photos:</h2>
+          
 
-@Html.Action("_PhotoGallery", "Photo", new { number = 3 })
-    
+<div class="text-center">
+    @Html.Action("_PhotoGallery", "Photo", new { number = 3 })
+</div>
