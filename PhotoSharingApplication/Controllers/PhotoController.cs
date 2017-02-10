@@ -47,7 +47,7 @@ namespace PhotoSharingApplication.Controllers
 
             if (number == 0)
             {
-                photos = context.Photos.ToList();
+                photos = context.Photos.OrderByDescending(p=>p.PhotoID).ToList();
             }
             else
             {

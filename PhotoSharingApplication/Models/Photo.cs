@@ -49,6 +49,8 @@ namespace PhotoSharingApplication.Models
         public string Latitude { get; set; }
 
         public string AzurePath { get; set; }
+
+        public string CVJson { get; set; }
         //All the comments on this photo, as a navigation property
         public virtual ICollection<Comment> Comments { get; set; }
 

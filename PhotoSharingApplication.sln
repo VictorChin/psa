@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4965B9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSharingApplication", "PhotoSharingApplication\PhotoSharingApplication.csproj", "{3953D3A4-D182-423E-8F45-64EC7B7FE248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSharingTests", "PhotoSharingTests\PhotoSharingTests.csproj", "{F6A8300A-6D21-46C1-A10E-DE0671689316}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetAIDetection", "GetAIDetection\GetAIDetection.csproj", "{645BD9F4-BDC8-4DDA-8AB4-8EDE26CA93BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +24,10 @@ Global
 		{3953D3A4-D182-423E-8F45-64EC7B7FE248}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3953D3A4-D182-423E-8F45-64EC7B7FE248}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3953D3A4-D182-423E-8F45-64EC7B7FE248}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6A8300A-6D21-46C1-A10E-DE0671689316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6A8300A-6D21-46C1-A10E-DE0671689316}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6A8300A-6D21-46C1-A10E-DE0671689316}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6A8300A-6D21-46C1-A10E-DE0671689316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{645BD9F4-BDC8-4DDA-8AB4-8EDE26CA93BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645BD9F4-BDC8-4DDA-8AB4-8EDE26CA93BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{645BD9F4-BDC8-4DDA-8AB4-8EDE26CA93BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645BD9F4-BDC8-4DDA-8AB4-8EDE26CA93BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
